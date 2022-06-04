@@ -20,6 +20,8 @@ enum token_id_ {
     /* PreAssignment values. */
     PA_GROUNDED = 0xA,
     PA_OVERRIDED = 0xB,
+    /* Wrappers */
+    WRAPPER_VarWrapper,
     /* Punctuation/Symbols. */
     l_par = 0xC,
     r_par = 0xD,
@@ -74,7 +76,8 @@ _all_keywords all_keywords[] = {
     {(char *)"linux", OS_LINUX},
     {(char *)"windows", OS_WINDOWS},
     {(char *)"GROUNDED", PA_GROUNDED},
-    {(char *)"OVERRIDE", PA_OVERRIDED}
+    {(char *)"OVERRIDE", PA_OVERRIDED},
+    {(char *)"VarWrapper", WRAPPER_VarWrapper}
 };
 
 all_puncs_ all_p[] = {

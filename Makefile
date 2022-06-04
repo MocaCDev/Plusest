@@ -1,4 +1,6 @@
 .PHONY: all
 
 all:
-	gcc -g -O2 main.c -o main.o
+	cargo build
+	gcc main.c -o main -lmacrolang -L./target/debug
+	@./run.sh
