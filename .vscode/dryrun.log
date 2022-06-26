@@ -1,0 +1,6 @@
+make: Entering directory '/home/moca/macrolang'
+cargo build
+gcc main.c -o main -lmacrolang -L./target/debug
+./run.sh
+make: Leaving directory '/home/moca/macrolang'
+ 

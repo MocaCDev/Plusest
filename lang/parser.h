@@ -4,6 +4,7 @@
 #include "read.h"
 #include "wrappers.h"
 #include "util.h"
+#include "rust_state.h"
 #include <stdbool.h>
 
 #define ERR(msg, ...) {\
@@ -259,8 +260,6 @@ void parse_hashtag(_Parser *p)
 
 _Parser *main_parser(_Parser *p)
 {
-    for(int i = 0; i < p->amnt; i++)
-        printf("%s, %d\n", p->ci[i]->keyword_name, p->ci[i]->wrapper_id);
     if(config_i->OS_INFO.amnt_of_types > 0)
     {
         bool targets_linux = false;
@@ -282,6 +281,7 @@ _Parser *main_parser(_Parser *p)
                     }
             }
 
+        SetupInfo si;
         if(targets_linux && targets_windows)
         {
             // Move the checking to the runner?
@@ -297,6 +297,8 @@ _Parser *main_parser(_Parser *p)
             config_i->OS_INFO.targetting_OS = T_WINDOWS;
             #endif
 
+            si = init_SetupInfo(T_WINDOWS_AND_LINUX);
+
             goto continue_main_parser;
         } 
 
@@ -311,6 +313,8 @@ _Parser *main_parser(_Parser *p)
             config_i->OS_INFO.targetting_OS = T_LINUX;
             #endif
 
+            si = init_SetupInfo(T_LINUX_ONLY);
+
             goto continue_main_parser;
         }
 
@@ -324,6 +328,8 @@ _Parser *main_parser(_Parser *p)
             #ifdef WINDOWS
             config_i->OS_INFO.targetting_OS = T_WINDOWS;
             #endif
+
+            si = init_SetupInfo(T_WINDOWS_ONLY);
 
             goto continue_main_parser;
         }

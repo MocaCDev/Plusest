@@ -14,27 +14,28 @@ enum token_id_ {
     use = 0x5,
     Word = 0x6,
     syntax = 0x7,
+    assign = 0x8,
     /* Operating Systems to support. */
-    OS_LINUX = 0x8,
-    OS_WINDOWS = 0x9,
+    OS_LINUX = 0x9,
+    OS_WINDOWS = 0xA,
     /* PreAssignment values. */
-    PA_GROUNDED = 0xA,
-    PA_OVERRIDED = 0xB,
+    PA_GROUNDED = 0xB,
+    PA_OVERRIDED = 0xC,
     /* Wrappers */
     WRAPPER_VarWrapper,
     /* Punctuation/Symbols. */
-    l_par = 0xC,
-    r_par = 0xD,
-    l_sqrbrack = 0xE,
-    r_sqrbrack = 0xF,
-    l_brack = 0x10,
-    r_brack = 0x11,
-    semi_colon = 0x12,
-    comma = 0x13,
-    string = 0x14,
-    colon = 0x15,
-    hashtag = 0x16,
-    EndOF = 0x17
+    l_par = 0xD,
+    r_par = 0xE,
+    l_sqrbrack = 0xF,
+    r_sqrbrack = 0x10,
+    l_brack = 0x11,
+    r_brack = 0x12,
+    semi_colon = 0x13,
+    comma = 0x14,
+    string = 0x15,
+    colon = 0x16,
+    hashtag = 0x17,
+    EndOF = 0x18
   };
 
 typedef struct Token {
