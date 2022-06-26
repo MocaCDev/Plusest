@@ -2,5 +2,5 @@
 
 all:
 	cargo build
-	gcc main.c -o main -lmacrolang -L./target/debug
+	gcc main.c -o main.o -lmacrolang -L./target/debug
 	@./run.sh

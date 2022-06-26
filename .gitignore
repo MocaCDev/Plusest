@@ -1,5 +1,4 @@
 /target
 Cargo.lock
-.o
-main
-run
+*.o
+/lang/*.o
